@@ -115,3 +115,11 @@ export async function POST(request: Request) {
     );
   }
 }
+
+console.log('UPLOAD ENV CHECK', {
+  hasUrl: !!process.env.NEXT_PUBLIC_SUPABASE_URL,
+  url: process.env.NEXT_PUBLIC_SUPABASE_URL,
+  hasServiceKey: !!process.env.SUPABASE_SERVICE_ROLE_KEY,
+  hasBucket: !!process.env.SUPABASE_STORAGE_BUCKET,
+  bucket: process.env.SUPABASE_STORAGE_BUCKET,
+});
