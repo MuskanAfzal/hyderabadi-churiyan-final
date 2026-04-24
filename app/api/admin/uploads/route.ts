@@ -38,6 +38,14 @@ export async function POST(request: Request) {
   try {
     const supabaseStorage = supabaseStorageConfig();
 
+    console.log('UPLOAD ENV CHECK', {
+      hasUrl: !!process.env.NEXT_PUBLIC_SUPABASE_URL,
+      url: process.env.NEXT_PUBLIC_SUPABASE_URL,
+      hasServiceKey: !!process.env.SUPABASE_SERVICE_ROLE_KEY,
+      hasBucket: !!process.env.SUPABASE_STORAGE_BUCKET,
+      bucket: process.env.SUPABASE_STORAGE_BUCKET,
+    });
+
     if (!supabaseStorage) {
       return NextResponse.json(
         {
@@ -96,6 +104,7 @@ export async function POST(request: Request) {
 
       if (!uploadResponse.ok) {
         const text = await uploadResponse.text();
+        console.error('SUPABASE UPLOAD RESPONSE:', text);
         throw new Error(`Supabase upload failed: ${text}`);
       }
 
@@ -106,6 +115,8 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true, images });
   } catch (error) {
+    console.error('UPLOAD ERROR:', error);
+
     return NextResponse.json(
       {
         ok: false,
@@ -115,11 +126,3 @@ export async function POST(request: Request) {
     );
   }
 }
-
-console.log('UPLOAD ENV CHECK', {
-  hasUrl: !!process.env.NEXT_PUBLIC_SUPABASE_URL,
-  url: process.env.NEXT_PUBLIC_SUPABASE_URL,
-  hasServiceKey: !!process.env.SUPABASE_SERVICE_ROLE_KEY,
-  hasBucket: !!process.env.SUPABASE_STORAGE_BUCKET,
-  bucket: process.env.SUPABASE_STORAGE_BUCKET,
-});
