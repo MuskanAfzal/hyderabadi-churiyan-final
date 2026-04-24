@@ -1,0 +1,58 @@
+{
+  "orders": [
+    {
+      "id": "d1919f94-1c9e-482b-8e3a-ec1e63998f76",
+      "createdAt": "2026-03-06T05:42:52.088Z",
+      "status": "New",
+      "customerName": "nox",
+      "phone": "03565678219",
+      "address": "test test",
+      "notes": "nothing!",
+      "currency": "PKR",
+      "items": [
+        {
+          "id": "66702d6a-3d44-4163-b787-84b7c400ac55",
+          "title": "test2",
+          "price": 9000,
+          "qty": 1,
+          "image": "/uploads/553c629e-db1a-4898-85b2-f43fa0604707.opt.webp"
+        },
+        {
+          "id": "23eb1156-1767-46dd-9bb6-bfad0cbba5a0",
+          "title": "testing",
+          "price": 4000,
+          "qty": 1,
+          "image": "/uploads/062f2c3a-da30-4d52-b20c-a1f707b8b94b.opt.webp"
+        },
+        {
+          "id": "0a4512fc-7658-4090-a1d0-4d3471ed808c",
+          "title": "yfr67",
+          "price": 78,
+          "qty": 1,
+          "image": "/uploads/ddcacafb-1ee2-4b2a-b870-1e45d9fe4c63.webp"
+        }
+      ],
+      "total": 13078
+    },
+    {
+      "id": "69b36393-d4d5-4f4d-af23-60338e98bef6",
+      "createdAt": "2026-03-06T04:55:16.231Z",
+      "status": "Confirmed",
+      "customerName": "MVC GPT",
+      "phone": "03445678219",
+      "address": "test the data ",
+      "notes": "its fragile",
+      "currency": "PKR",
+      "items": [
+        {
+          "id": "5c988993-e6e0-4f40-83fd-ba2206c7ad95",
+          "title": "google",
+          "price": 5000,
+          "qty": 1,
+          "image": "/uploads/db821a8b-6711-40a6-a558-3abce7b55370.opt.webp"
+        }
+      ],
+      "total": 5000
+    }
+  ]
+}

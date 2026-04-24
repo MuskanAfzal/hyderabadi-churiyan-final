@@ -1,0 +1,1194 @@
+{
+  "products": [
+    {
+      "id": "hc-maroon-gold-bridal-bangles",
+      "title": "Maroon Gold Bridal Bangles",
+      "category": "Bridal Bangles",
+      "brand": "Hyderabadi Churiyan",
+      "price": 7800,
+      "stock": 10,
+      "shortDesc": "Deep maroon bangles with gold bead edging for a rich bridal look.",
+      "description": "Deep maroon bangles with gold bead edging for a rich bridal look. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/01-maroon-gold-bridal-bangles.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/01-maroon-gold-bridal-bangles.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "maroon",
+        "gold"
+      ],
+      "materials": [],
+      "variantStocks": [],
+      "hoverImage": "/uploads/hyderabadi-churiyan-new/01-maroon-gold-bridal-bangles.jpg"
+    },
+    {
+      "id": "hc-mint-green-kids-churiyan",
+      "title": "Mint Green Kids Churiyan",
+      "category": "Kids Churiyan",
+      "brand": "Hyderabadi Churiyan",
+      "price": 3600,
+      "stock": 10,
+      "shortDesc": "Soft mint and gold thread bangles sized for little wrists.",
+      "description": "Soft mint and gold thread bangles sized for little wrists. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/02-mint-green-kids-churiyan.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/02-mint-green-kids-churiyan.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "mint green",
+        "gold"
+      ],
+      "materials": [
+        "silk thread",
+        "metallic trim"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-purple-kids-churiyan",
+      "title": "Purple Kids Churiyan",
+      "category": "Kids Churiyan",
+      "brand": "Hyderabadi Churiyan",
+      "price": 3600,
+      "stock": 10,
+      "shortDesc": "Purple kids bangles with gold detailing and festive shine.",
+      "description": "Purple kids bangles with gold detailing and festive shine. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/03-purple-kids-churiyan.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/03-purple-kids-churiyan.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "purple",
+        "gold"
+      ],
+      "materials": [
+        "silk thread",
+        "mirror work"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-multicolor-bridal-bangle-stack",
+      "title": "Multicolor Bridal Bangle Stack",
+      "category": "Bridal Bangles",
+      "brand": "Hyderabadi Churiyan",
+      "price": 9200,
+      "stock": 10,
+      "shortDesc": "A colorful bridal stack with kundan, pearls, and statement hanging details.",
+      "description": "A colorful bridal stack with kundan, pearls, and statement hanging details. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/04-multicolor-bridal-stack.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/04-multicolor-bridal-stack.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "green",
+        "yellow",
+        "pink",
+        "gold"
+      ],
+      "materials": [
+        "kundan",
+        "pearls",
+        "silk thread"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-antique-gold-bridal-kada-set",
+      "title": "Antique Gold Bridal Kada Set",
+      "category": "Bridal Bangles",
+      "brand": "Hyderabadi Churiyan",
+      "price": 9800,
+      "stock": 10,
+      "shortDesc": "Antique gold kada-style bangles with pearls, stones, and dangling charms.",
+      "description": "Antique gold kada-style bangles with pearls, stones, and dangling charms. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/05-antique-gold-bridal-kada.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/05-antique-gold-bridal-kada.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "gold",
+        "champagne"
+      ],
+      "materials": [
+        "kundan",
+        "pearls",
+        "metal charms"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-maroon-garden-bridal-kaleera-bangles",
+      "title": "Maroon Garden Bridal Kaleera Bangles",
+      "category": "Bridal Bangles",
+      "brand": "Hyderabadi Churiyan",
+      "price": 9400,
+      "stock": 10,
+      "shortDesc": "Maroon bridal bangles with garden-inspired gold kaleera accents.",
+      "description": "Maroon bridal bangles with garden-inspired gold kaleera accents. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/06-maroon-garden-bridal-kaleera.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/06-maroon-garden-bridal-kaleera.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "maroon",
+        "gold"
+      ],
+      "materials": [
+        "silk thread",
+        "pearls",
+        "metal charms"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-rainbow-pearl-flower-chooriyan",
+      "title": "Rainbow Pearl Flower Chooriyan",
+      "category": "Chooriyan Sets",
+      "brand": "Hyderabadi Churiyan",
+      "price": 5600,
+      "stock": 10,
+      "shortDesc": "Colorful thread chooriyan finished with pearl flower clusters.",
+      "description": "Colorful thread chooriyan finished with pearl flower clusters. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/07-rainbow-pearl-flower-chooriyan.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/07-rainbow-pearl-flower-chooriyan.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "turquoise",
+        "purple",
+        "orange",
+        "pink"
+      ],
+      "materials": [
+        "silk thread",
+        "pearls"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-powder-blue-sequin-chooriyan",
+      "title": "Powder Blue Sequin Chooriyan",
+      "category": "Chooriyan Sets",
+      "brand": "Hyderabadi Churiyan",
+      "price": 4200,
+      "stock": 10,
+      "shortDesc": "Powder blue sequin bangles with subtle silver crisscross detail.",
+      "description": "Powder blue sequin bangles with subtle silver crisscross detail. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/08-powder-blue-sequin-chooriyan.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/08-powder-blue-sequin-chooriyan.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "powder blue",
+        "silver"
+      ],
+      "materials": [
+        "silk thread",
+        "sequins"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-maroon-shimmer-kundan-bangles",
+      "title": "Maroon Shimmer Kundan Bangles",
+      "category": "Bridal Bangles",
+      "brand": "Hyderabadi Churiyan",
+      "price": 6400,
+      "stock": 10,
+      "shortDesc": "Maroon shimmer bangles with leaf-shaped kundan work.",
+      "description": "Maroon shimmer bangles with leaf-shaped kundan work. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/09-maroon-shimmer-kundan-bangles.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/09-maroon-shimmer-kundan-bangles.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "maroon",
+        "gold"
+      ],
+      "materials": [
+        "silk thread",
+        "kundan",
+        "crystal"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-pastel-sequin-chooriyan-set",
+      "title": "Pastel Sequin Chooriyan Set",
+      "category": "Chooriyan Sets",
+      "brand": "Hyderabadi Churiyan",
+      "price": 4300,
+      "stock": 10,
+      "shortDesc": "Pastel pink, cream, blue, orange, and beige sequined bangles.",
+      "description": "Pastel pink, cream, blue, orange, and beige sequined bangles. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/10-pastel-sequin-chooriyan.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/10-pastel-sequin-chooriyan.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "pink",
+        "cream",
+        "blue",
+        "orange"
+      ],
+      "materials": [
+        "silk thread",
+        "sequins"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-rainbow-pearl-garden-chooriyan",
+      "title": "Rainbow Pearl Garden Chooriyan",
+      "category": "Chooriyan Sets",
+      "brand": "Hyderabadi Churiyan",
+      "price": 5800,
+      "stock": 10,
+      "shortDesc": "Rainbow pearl chooriyan styled with soft floral details.",
+      "description": "Rainbow pearl chooriyan styled with soft floral details. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/11-rainbow-pearl-garden-chooriyan.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/11-rainbow-pearl-garden-chooriyan.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "turquoise",
+        "purple",
+        "orange",
+        "pink"
+      ],
+      "materials": [
+        "silk thread",
+        "pearls"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-maroon-name-bridal-bangle",
+      "title": "Maroon Custom Bridal Bangle",
+      "category": "Custom Bangles",
+      "brand": "Hyderabadi Churiyan",
+      "price": 8800,
+      "stock": 10,
+      "shortDesc": "Custom maroon bridal bangle with crystal lettering and gold bead work.",
+      "description": "Custom maroon bridal bangle with crystal lettering and gold bead work. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/12-maroon-name-bridal-bangle.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/12-maroon-name-bridal-bangle.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "maroon",
+        "gold"
+      ],
+      "materials": [
+        "silk thread",
+        "crystal",
+        "gold beads"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-filza-maroon-name-bangles",
+      "title": "Filza Maroon Custom Bangles",
+      "category": "Custom Bangles",
+      "brand": "Hyderabadi Churiyan",
+      "price": 8900,
+      "stock": 10,
+      "shortDesc": "Personalized Filza custom bangles with red maroon thread and crystal work.",
+      "description": "Personalized Filza custom bangles with red maroon thread and crystal work. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/13-filza-maroon-name-bangles.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/13-filza-maroon-name-bangles.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "maroon",
+        "gold",
+        "crystal"
+      ],
+      "materials": [
+        "silk thread",
+        "crystal",
+        "gold beads"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-emerald-floral-thread-bangles",
+      "title": "Emerald Floral Thread Bangles",
+      "category": "Chooriyan Sets",
+      "brand": "Hyderabadi Churiyan",
+      "price": 6200,
+      "stock": 10,
+      "shortDesc": "Emerald and ivory floral bangles with sequin center detailing.",
+      "description": "Emerald and ivory floral bangles with sequin center detailing. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/14-emerald-floral-thread-bangles.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/14-emerald-floral-thread-bangles.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "emerald",
+        "ivory"
+      ],
+      "materials": [
+        "silk thread",
+        "sequins"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-olive-mirror-thread-bangles",
+      "title": "Olive Mirror Thread Bangles",
+      "category": "Chooriyan Sets",
+      "brand": "Hyderabadi Churiyan",
+      "price": 6200,
+      "stock": 10,
+      "shortDesc": "Olive green thread bangles with round mirror accents and gold borders.",
+      "description": "Olive green thread bangles with round mirror accents and gold borders. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/15-olive-mirror-thread-bangles.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/15-olive-mirror-thread-bangles.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "olive",
+        "green",
+        "gold"
+      ],
+      "materials": [
+        "silk thread",
+        "mirror work",
+        "beads"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-mirror-pearl-bridal-bangle-set",
+      "title": "Mirror Pearl Bridal Bangle Set",
+      "category": "Bridal Bangles",
+      "brand": "Hyderabadi Churiyan",
+      "price": 8600,
+      "stock": 10,
+      "shortDesc": "Mirror and pearl bridal bangles wrapped in maroon and black thread.",
+      "description": "Mirror and pearl bridal bangles wrapped in maroon and black thread. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/16-mirror-pearl-bridal-bangles.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/16-mirror-pearl-bridal-bangles.jpg"
+      ],
+      "visibility": "active",
+      "featured": true,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "maroon",
+        "black",
+        "white"
+      ],
+      "materials": [
+        "mirror work",
+        "pearls",
+        "silk thread"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-cowrie-mirror-thread-bangles",
+      "title": "Cowrie Mirror Thread Bangles",
+      "category": "Chooriyan Sets",
+      "brand": "Hyderabadi Churiyan",
+      "price": 5200,
+      "stock": 10,
+      "shortDesc": "Cowrie-inspired thread bangles with red, grey, and mirror details.",
+      "description": "Cowrie-inspired thread bangles with red, grey, and mirror details. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/17-cowrie-mirror-thread-bangles.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/17-cowrie-mirror-thread-bangles.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "red",
+        "grey"
+      ],
+      "materials": [
+        "silk thread",
+        "mirror work",
+        "cowrie shells"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-color-pop-thread-chooriyan-set",
+      "title": "Color Pop Thread Chooriyan Set",
+      "category": "Chooriyan Sets",
+      "brand": "Hyderabadi Churiyan",
+      "price": 4500,
+      "stock": 10,
+      "shortDesc": "Bright multi-color thread chooriyan with mirror and bell embellishments.",
+      "description": "Bright multi-color thread chooriyan with mirror and bell embellishments. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/18-color-pop-thread-chooriyan.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/18-color-pop-thread-chooriyan.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "red",
+        "yellow",
+        "blue",
+        "green"
+      ],
+      "materials": [
+        "silk thread",
+        "mirror work",
+        "bells"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-mirror-tassel-hair-paranda",
+      "title": "Mirror Tassel Hair Paranda",
+      "category": "Head Accessories",
+      "brand": "Hyderabadi Churiyan",
+      "price": 7600,
+      "stock": 5,
+      "shortDesc": "Colorful mirror hair paranda with tassels and gold hanging charms.",
+      "description": "Colorful mirror hair paranda with tassels and gold hanging charms. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/19-mirror-tassel-hair-paranda.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/19-mirror-tassel-hair-paranda.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [],
+      "colors": [
+        "multi",
+        "gold"
+      ],
+      "materials": [
+        "mirror work",
+        "tassels",
+        "metal charms"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-sage-green-leaf-bangles",
+      "title": "Sage Green Leaf Bangles",
+      "category": "Chooriyan Sets",
+      "brand": "Hyderabadi Churiyan",
+      "price": 5400,
+      "stock": 10,
+      "shortDesc": "Sage and forest green bangles with delicate gold leaf motifs.",
+      "description": "Sage and forest green bangles with delicate gold leaf motifs. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/20-sage-green-leaf-bangles.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/20-sage-green-leaf-bangles.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "sage",
+        "forest green",
+        "gold"
+      ],
+      "materials": [
+        "silk thread",
+        "metallic trim"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-ivory-pearl-bridal-bangles",
+      "title": "Ivory Pearl Bridal Bangles",
+      "category": "Bridal Bangles",
+      "brand": "Hyderabadi Churiyan",
+      "price": 5200,
+      "stock": 10,
+      "shortDesc": "Ivory satin bangles edged with pearl scallops and gold beads.",
+      "description": "Ivory satin bangles edged with pearl scallops and gold beads. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/21-ivory-pearl-bridal-bangles.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/21-ivory-pearl-bridal-bangles.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "ivory",
+        "gold",
+        "pearl"
+      ],
+      "materials": [
+        "satin thread",
+        "pearls",
+        "gold beads"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-emerald-pearl-bridal-bangles",
+      "title": "Emerald Pearl Bridal Bangles",
+      "category": "Bridal Bangles",
+      "brand": "Hyderabadi Churiyan",
+      "price": 8200,
+      "stock": 10,
+      "shortDesc": "Emerald bridal bangles with pearl borders and mirror medallions.",
+      "description": "Emerald bridal bangles with pearl borders and mirror medallions. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/22-emerald-pearl-bridal-bangles.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/22-emerald-pearl-bridal-bangles.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "emerald",
+        "white",
+        "gold"
+      ],
+      "materials": [
+        "silk thread",
+        "pearls",
+        "mirror work"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-rainbow-pearl-wrist-stack",
+      "title": "Rainbow Pearl Wrist Stack",
+      "category": "Chooriyan Sets",
+      "brand": "Hyderabadi Churiyan",
+      "price": 5800,
+      "stock": 10,
+      "shortDesc": "A colorful wrist stack with pearl floral clusters and soft festive styling.",
+      "description": "A colorful wrist stack with pearl floral clusters and soft festive styling. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/23-rainbow-pearl-wrist-stack.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/23-rainbow-pearl-wrist-stack.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "turquoise",
+        "purple",
+        "orange",
+        "pink"
+      ],
+      "materials": [
+        "silk thread",
+        "pearls"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-royal-blue-floral-bangles",
+      "title": "Royal Blue Floral Bangles",
+      "category": "Chooriyan Sets",
+      "brand": "Hyderabadi Churiyan",
+      "price": 6200,
+      "stock": 10,
+      "shortDesc": "Royal blue bangles with gold floral vine details and statement volume.",
+      "description": "Royal blue bangles with gold floral vine details and statement volume. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/24-royal-blue-floral-bangles.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/24-royal-blue-floral-bangles.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "royal blue",
+        "gold"
+      ],
+      "materials": [
+        "silk thread",
+        "metallic motifs"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-basket-mirror-chooriyan-set",
+      "title": "Basket Mirror Chooriyan Set",
+      "category": "Chooriyan Sets",
+      "brand": "Hyderabadi Churiyan",
+      "price": 5000,
+      "stock": 10,
+      "shortDesc": "Red and green basket-styled chooriyan with mirror and bead borders.",
+      "description": "Red and green basket-styled chooriyan with mirror and bead borders. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/25-basket-mirror-chooriyan.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/25-basket-mirror-chooriyan.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "red",
+        "green",
+        "gold"
+      ],
+      "materials": [
+        "silk thread",
+        "mirror work",
+        "gold beads"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-pink-teal-kids-churiyan",
+      "title": "Pink Teal Kids Churiyan",
+      "category": "Kids Churiyan",
+      "brand": "Hyderabadi Churiyan",
+      "price": 3900,
+      "stock": 10,
+      "shortDesc": "Pink and teal kids bangles with bright stonework and gold borders.",
+      "description": "Pink and teal kids bangles with bright stonework and gold borders. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/26-pink-teal-kids-churiyan.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/26-pink-teal-kids-churiyan.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "pink",
+        "teal",
+        "gold"
+      ],
+      "materials": [
+        "silk thread",
+        "stones",
+        "gold beads"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-purple-pearl-bridal-bangles",
+      "title": "Purple Pearl Bridal Bangles",
+      "category": "Bridal Bangles",
+      "brand": "Hyderabadi Churiyan",
+      "price": 7600,
+      "stock": 10,
+      "shortDesc": "Purple bridal bangles with pearl borders and mirror accents.",
+      "description": "Purple bridal bangles with pearl borders and mirror accents. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/27-purple-pearl-bridal-bangles.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/27-purple-pearl-bridal-bangles.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "purple",
+        "white",
+        "gold"
+      ],
+      "materials": [
+        "silk thread",
+        "pearls",
+        "mirror work"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-rani-pink-bridal-chooriyan",
+      "title": "Rani Pink Bridal Chooriyan",
+      "category": "Bridal Bangles",
+      "brand": "Hyderabadi Churiyan",
+      "price": 7800,
+      "stock": 10,
+      "shortDesc": "Rani pink bridal chooriyan with gold bead borders and mirror motifs.",
+      "description": "Rani pink bridal chooriyan with gold bead borders and mirror motifs. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/28-rani-pink-bridal-chooriyan.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/28-rani-pink-bridal-chooriyan.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "rani pink",
+        "gold"
+      ],
+      "materials": [
+        "silk thread",
+        "mirror work",
+        "gold beads"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-rose-hand-necklace",
+      "title": "Rose Hand Necklace",
+      "category": "Necklaces",
+      "brand": "Hyderabadi Churiyan",
+      "price": 4200,
+      "stock": 5,
+      "shortDesc": "Minimal gold necklace with a hand charm and red rose accent.",
+      "description": "Minimal gold necklace with a hand charm and red rose accent. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/29-rose-hand-necklace.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/29-rose-hand-necklace.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [],
+      "colors": [
+        "gold",
+        "red"
+      ],
+      "materials": [
+        "metal chain",
+        "stone"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-dulhan-ki-behen-earrings",
+      "title": "Dulhan Ki Behen Earrings",
+      "category": "Earrings",
+      "brand": "Hyderabadi Churiyan",
+      "price": 6800,
+      "stock": 5,
+      "shortDesc": "Custom red earrings with kundan borders, pearls, and cowrie drops.",
+      "description": "Custom red earrings with kundan borders, pearls, and cowrie drops. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/30-dulhan-ki-behen-earrings.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/30-dulhan-ki-behen-earrings.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [],
+      "colors": [
+        "red",
+        "gold",
+        "white"
+      ],
+      "materials": [
+        "kundan",
+        "pearls",
+        "cowrie shells"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-personalized-bridal-hair-charm",
+      "title": "Personalized Bridal Hair Charm",
+      "category": "Head Accessories",
+      "brand": "Hyderabadi Churiyan",
+      "price": 7200,
+      "stock": 5,
+      "shortDesc": "Personalized hair charm with pearl strings and mini jhumka hangings.",
+      "description": "Personalized hair charm with pearl strings and mini jhumka hangings. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/31-personalized-bridal-hair-charm.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/31-personalized-bridal-hair-charm.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [],
+      "colors": [
+        "purple",
+        "gold",
+        "white"
+      ],
+      "materials": [
+        "pearls",
+        "metal charms",
+        "threadwork"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-bride-cowrie-hair-accessory",
+      "title": "Bride Cowrie Hair Accessory",
+      "category": "Head Accessories",
+      "brand": "Hyderabadi Churiyan",
+      "price": 6500,
+      "stock": 5,
+      "shortDesc": "Bride hair accessory with cowrie shells, pearl strings, and soft pink threadwork.",
+      "description": "Bride hair accessory with cowrie shells, pearl strings, and soft pink threadwork. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/32-bride-cowrie-hair-accessory.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/32-bride-cowrie-hair-accessory.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [],
+      "colors": [
+        "pink",
+        "white",
+        "gold"
+      ],
+      "materials": [
+        "pearls",
+        "cowrie shells",
+        "threadwork"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-cowrie-pearl-statement-earrings",
+      "title": "Cowrie Pearl Statement Earrings",
+      "category": "Earrings",
+      "brand": "Hyderabadi Churiyan",
+      "price": 6200,
+      "stock": 5,
+      "shortDesc": "Long cowrie and pearl earrings with gold chains and bridal movement.",
+      "description": "Long cowrie and pearl earrings with gold chains and bridal movement. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/33-cowrie-pearl-statement-earrings.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/33-cowrie-pearl-statement-earrings.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [],
+      "colors": [
+        "white",
+        "gold"
+      ],
+      "materials": [
+        "cowrie shells",
+        "pearls",
+        "chains"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-cowrie-pearl-hair-kalira",
+      "title": "Cowrie Pearl Hair Kalira",
+      "category": "Head Accessories",
+      "brand": "Hyderabadi Churiyan",
+      "price": 7800,
+      "stock": 5,
+      "shortDesc": "Cowrie pearl hair kalira with layered shell medallions and gold chainwork.",
+      "description": "Cowrie pearl hair kalira with layered shell medallions and gold chainwork. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/34-cowrie-pearl-hair-kalira.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/34-cowrie-pearl-hair-kalira.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [],
+      "colors": [
+        "white",
+        "gold"
+      ],
+      "materials": [
+        "cowrie shells",
+        "pearls",
+        "chains"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-classic-gold-chooriyan-stack",
+      "title": "Classic Gold Chooriyan Stack",
+      "category": "Chooriyan Sets",
+      "brand": "Hyderabadi Churiyan",
+      "price": 3600,
+      "stock": 10,
+      "shortDesc": "Simple classic gold chooriyan stack for everyday festive styling.",
+      "description": "Simple classic gold chooriyan stack for everyday festive styling. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/35-classic-gold-chooriyan-stack.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/35-classic-gold-chooriyan-stack.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "gold"
+      ],
+      "materials": [
+        "metal bangles"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-cowrie-pearl-hand-harness",
+      "title": "Cowrie Pearl Hand Harness",
+      "category": "Hand Accessories",
+      "brand": "Hyderabadi Churiyan",
+      "price": 6400,
+      "stock": 5,
+      "shortDesc": "Delicate hand harness with cowrie shells, pearls, and gold chain detail.",
+      "description": "Delicate hand harness with cowrie shells, pearls, and gold chain detail. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/36-cowrie-pearl-hand-harness.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/36-cowrie-pearl-hand-harness.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [],
+      "colors": [
+        "white",
+        "gold"
+      ],
+      "materials": [
+        "cowrie shells",
+        "pearls",
+        "chains"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-black-gold-kids-churiyan",
+      "title": "Black Gold Kids Churiyan",
+      "category": "Kids Churiyan",
+      "brand": "Hyderabadi Churiyan",
+      "price": 3900,
+      "stock": 10,
+      "shortDesc": "Black kids churiyan with gold accents and tiny mirror details.",
+      "description": "Black kids churiyan with gold accents and tiny mirror details. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/37-black-gold-kids-churiyan.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/37-black-gold-kids-churiyan.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "black",
+        "gold"
+      ],
+      "materials": [
+        "silk thread",
+        "mirror work"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    },
+    {
+      "id": "hc-peach-champagne-bridal-bangles",
+      "title": "Peach Champagne Bridal Bangles",
+      "category": "Bridal Bangles",
+      "brand": "Hyderabadi Churiyan",
+      "price": 8400,
+      "stock": 10,
+      "shortDesc": "Peach champagne bridal bangles with crystal centerwork and gold borders.",
+      "description": "Peach champagne bridal bangles with crystal centerwork and gold borders. Handcrafted by Hyderabadi Churiyan for weddings, mehndi events, Eid looks, and custom festive styling.",
+      "image": "/uploads/hyderabadi-churiyan-new/38-peach-champagne-bridal-bangles.jpg",
+      "images": [
+        "/uploads/hyderabadi-churiyan-new/38-peach-champagne-bridal-bangles.jpg"
+      ],
+      "visibility": "active",
+      "featured": false,
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "colors": [
+        "peach",
+        "champagne",
+        "gold"
+      ],
+      "materials": [
+        "silk thread",
+        "crystal",
+        "gold beads"
+      ],
+      "variantStocks": [],
+      "hoverImage": ""
+    }
+  ]
+}

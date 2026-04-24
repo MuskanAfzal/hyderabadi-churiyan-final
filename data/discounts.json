@@ -1,0 +1,10 @@
+{
+  "codes": [
+    {
+      "code": "WinterSale",
+      "type": "percent",
+      "value": 10,
+      "isActive": true
+    }
+  ]
+}

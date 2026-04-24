@@ -1,0 +1,14 @@
+{
+  "globalEnabled": true,
+  "globalPercent": 10,
+  "globalTimerEnabled": true,
+  "globalStartAt": "2026-03-06T13:12",
+  "globalEndAt": "2026-06-19T13:12",
+  "categoryRules": {
+    "search": 80
+  },
+  "productRules": {
+    "hc-pink-teal-kids-churiyan": 68,
+    "hc-peach-champagne-bridal-bangles": 60
+  }
+}

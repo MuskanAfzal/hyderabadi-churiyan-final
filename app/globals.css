@@ -1,0 +1,20 @@
+html,
+body {
+  min-height: 100%;
+}
+
+.footerMeta {
+  padding-bottom: 20px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.small {
+  font-size: 13px;
+}
+
+.trackResultsList {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
