@@ -1,6 +1,4 @@
 import { randomUUID } from 'crypto';
-import { mkdir, writeFile } from 'fs/promises';
-import path from 'path';
 import { NextResponse } from 'next/server';
 import sharp from 'sharp';
 
@@ -10,22 +8,25 @@ const maxFileSize = 10 * 1024 * 1024;
 const blockedMimeTypes = new Set(['image/svg+xml']);
 
 function supabaseStorageConfig() {
-  const url = String(process.env.SUPABASE_URL || '').replace(/\/+$/, '');
-  const key = String(
-    process.env.SUPABASE_SERVICE_ROLE_KEY ||
-      process.env.SUPABASE_ANON_KEY ||
-      '',
+  const url = String(
+    process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL || '',
+  ).replace(/\/+$/, '');
+
+  const key = String(process.env.SUPABASE_SERVICE_ROLE_KEY || '').trim();
+
+  const bucket = String(
+    process.env.SUPABASE_STORAGE_BUCKET || 'store-images',
   ).trim();
-  const bucket = String(process.env.SUPABASE_STORAGE_BUCKET || '').trim();
 
   if (!url || !key || !bucket) return null;
+
   return { bucket, key, url };
 }
 
 function safeName(name: string) {
   return (
-    path
-      .basename(name, path.extname(name))
+    name
+      .replace(/\.[^/.]+$/, '')
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-+|-+$/g, '')
@@ -35,6 +36,19 @@ function safeName(name: string) {
 
 export async function POST(request: Request) {
   try {
+    const supabaseStorage = supabaseStorageConfig();
+
+    if (!supabaseStorage) {
+      return NextResponse.json(
+        {
+          ok: false,
+          error:
+            'Supabase Storage is not configured. Add NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, and SUPABASE_STORAGE_BUCKET in Vercel.',
+        },
+        { status: 500 },
+      );
+    }
+
     const form = await request.formData();
     const files = form
       .getAll('images')
@@ -45,15 +59,6 @@ export async function POST(request: Request) {
         { ok: false, error: 'No images were selected.' },
         { status: 400 },
       );
-    }
-
-    const supabaseStorage = supabaseStorageConfig();
-    const uploadDir = supabaseStorage
-      ? ''
-      : path.join(process.cwd(), 'public', 'uploads', 'dashboard');
-
-    if (!supabaseStorage) {
-      await mkdir(uploadDir, { recursive: true });
     }
 
     const images: string[] = [];
@@ -69,37 +74,34 @@ export async function POST(request: Request) {
 
       const filename = `${randomUUID()}-${safeName(file.name)}.webp`;
       const objectPath = `dashboard/${filename}`;
+
       const bytes = await sharp(Buffer.from(await file.arrayBuffer()))
         .rotate()
         .webp({ quality: 86 })
         .toBuffer();
 
-      if (supabaseStorage) {
-        const uploadUrl = `${supabaseStorage.url}/storage/v1/object/${encodeURIComponent(supabaseStorage.bucket)}/${objectPath}`;
-        const uploadResponse = await fetch(uploadUrl, {
-          method: 'POST',
-          headers: {
-            apikey: supabaseStorage.key,
-            Authorization: `Bearer ${supabaseStorage.key}`,
-            'Cache-Control': '31536000',
-            'Content-Type': 'image/webp',
-            'x-upsert': 'true',
-          },
-          body: new Blob([new Uint8Array(bytes)], { type: 'image/webp' }),
-        });
+      const uploadUrl = `${supabaseStorage.url}/storage/v1/object/${supabaseStorage.bucket}/${objectPath}`;
 
-        if (!uploadResponse.ok) {
-          throw new Error(`Supabase upload failed for ${file.name}.`);
-        }
+      const uploadResponse = await fetch(uploadUrl, {
+        method: 'POST',
+        headers: {
+          apikey: supabaseStorage.key,
+          Authorization: `Bearer ${supabaseStorage.key}`,
+          'Cache-Control': '31536000',
+          'Content-Type': 'image/webp',
+          'x-upsert': 'true',
+        },
+        body: bytes,
+      });
 
-        images.push(
-          `${supabaseStorage.url}/storage/v1/object/public/${encodeURIComponent(supabaseStorage.bucket)}/${objectPath}`,
-        );
-      } else {
-        const diskPath = path.join(uploadDir, filename);
-        await writeFile(diskPath, bytes);
-        images.push(`/uploads/dashboard/${filename}`);
+      if (!uploadResponse.ok) {
+        const text = await uploadResponse.text();
+        throw new Error(`Supabase upload failed: ${text}`);
       }
+
+      images.push(
+        `${supabaseStorage.url}/storage/v1/object/public/${supabaseStorage.bucket}/${objectPath}`,
+      );
     }
 
     return NextResponse.json({ ok: true, images });
