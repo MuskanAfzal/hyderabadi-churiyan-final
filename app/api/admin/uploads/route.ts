@@ -9,7 +9,7 @@ const blockedMimeTypes = new Set(['image/svg+xml']);
 
 function supabaseStorageConfig() {
   const url = String(
-    process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL || '',
+    process.env.SUPABASE_URL || '',
   ).replace(/\/+$/, '');
 
   const key = String(process.env.SUPABASE_SERVICE_ROLE_KEY || '').trim();
