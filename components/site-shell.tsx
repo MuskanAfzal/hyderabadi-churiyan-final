@@ -52,6 +52,7 @@ export function SiteShell({
   const { count } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
   const [timerValue, setTimerValue] = useState('--:--:--');
+  const iconBase = '/uploads/hyderabadi-churiyan-icons';
 
   useEffect(() => {
     if (
@@ -86,10 +87,38 @@ export function SiteShell({
               aria-label={announcementBarText}
             >
               <div className="announcementTicker__track">
-                <span>{announcementBarText}</span>
-                <span>{announcementBarText}</span>
-                <span>{announcementBarText}</span>
-                <span>{announcementBarText}</span>
+                <span>
+                  <img
+                    className="announcementIcon"
+                    src={`${iconBase}/delivery-yellow.png`}
+                    alt=""
+                  />
+                  {announcementBarText}
+                </span>
+                <span>
+                  <img
+                    className="announcementIcon"
+                    src={`${iconBase}/delivery-yellow.png`}
+                    alt=""
+                  />
+                  {announcementBarText}
+                </span>
+                <span>
+                  <img
+                    className="announcementIcon"
+                    src={`${iconBase}/delivery-yellow.png`}
+                    alt=""
+                  />
+                  {announcementBarText}
+                </span>
+                <span>
+                  <img
+                    className="announcementIcon"
+                    src={`${iconBase}/delivery-yellow.png`}
+                    alt=""
+                  />
+                  {announcementBarText}
+                </span>
               </div>
             </div>
           </div>
@@ -204,7 +233,7 @@ export function SiteShell({
 
       <footer className="footer">
         <div className="container footer__inner">
-          <div>
+          <div className="footerBrandPanel">
             <div className="brand brand--footer">
               {storeLogo ? (
                 <img className="brand__logo" src={storeLogo} alt={storeName} />
@@ -214,12 +243,63 @@ export function SiteShell({
               <span>{storeName}</span>
             </div>
             <p className="muted">{footerText}</p>
+            <div className="footerSocials" aria-label="Social links">
+              <span>
+                <img src={`${iconBase}/heart-pink.png`} alt="" />
+                Instagram
+              </span>
+              <span>
+                <img src={`${iconBase}/spark-gold.png`} alt="" />
+                Facebook
+              </span>
+              <span>
+                <img src={`${iconBase}/fire-yellow.png`} alt="" />
+                TikTok
+              </span>
+              <span>
+                <img src={`${iconBase}/bangle-pink.png`} alt="" />
+                Pinterest
+              </span>
+            </div>
           </div>
 
-          <div className="footer__links">
-            <Link href="/">Home</Link>
-            <Link href="/shop">Shop</Link>
-            <Link href="/contact">Contact</Link>
+          <div className="footerColumns">
+            <div className="footerColumn">
+              <h2>Shop</h2>
+              <Link href="/shop">All Collections</Link>
+              <Link href="/#best-sellers">Best Sellers</Link>
+              <Link href="/shop?sort=latest">New Arrivals</Link>
+              <Link href="/shop?sale=1">Offers</Link>
+            </div>
+            <div className="footerColumn">
+              <h2>Help</h2>
+              <Link href="/track-order">Track Your Order</Link>
+              <Link href="/cart">Cart</Link>
+              <Link href="/contact">Shipping & Delivery</Link>
+              <Link href="/contact">FAQs</Link>
+            </div>
+            <div className="footerColumn">
+              <h2>About</h2>
+              <Link href="/#story">Our Story</Link>
+              <Link href="/#collections">Craftsmanship</Link>
+              <Link href="/contact">Care Guide</Link>
+              <Link href="/#insta-love">Blogs</Link>
+            </div>
+            <div className="footerColumn footerColumn--contact">
+              <h2>Contact Us</h2>
+              <Link className="footerContactLink" href="/contact">
+                <img src={`${iconBase}/phone-pink.png`} alt="" />
+                +91 98765 43210
+              </Link>
+              <Link className="footerContactLink" href="/contact">
+                <img src={`${iconBase}/email-pink.png`} alt="" />
+                hello@hyderabadichuriyan.com
+              </Link>
+              <Link className="footerContactLink" href="/contact">
+                <img src={`${iconBase}/location-pink.png`} alt="" />
+                Hyderabad, Pakistan
+              </Link>
+            </div>
           </div>
         </div>
         <div className="container footerMeta">

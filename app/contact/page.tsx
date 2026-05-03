@@ -5,11 +5,15 @@ export const dynamic = 'force-dynamic';
 export default async function ContactPage() {
   const store = await getStoreContext();
   const phone = String(store.ownerWhatsapp || '').replace(/[^\d]/g, '');
+  const iconBase = '/uploads/hyderabadi-churiyan-icons';
 
   return (
-    <section className="section">
+    <section className="section contactPage">
       <div className="container contact">
         <div className="contactCard">
+          <div className="storefrontPageIcon" aria-hidden="true">
+            <img src={`${iconBase}/phone-pink.png`} alt="" />
+          </div>
           <h1>{store.settings.siteCopy.contactTitle}</h1>
           <p className="muted">{store.settings.siteCopy.contactIntro}</p>
 
@@ -24,7 +28,7 @@ export default async function ContactPage() {
               target="_blank"
               rel="noreferrer"
             >
-              WhatsApp →
+              Chat on WhatsApp
             </a>
           </div>
         </div>

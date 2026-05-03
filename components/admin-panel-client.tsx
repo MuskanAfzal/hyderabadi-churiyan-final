@@ -38,6 +38,7 @@ const blankSettings: StoreSettings = {
   announcementBarText: '',
   saleBannerEnabled: false,
   saleBannerTitle: '',
+  saleBannerDiscountText: '',
   saleBannerText: '',
   saleBannerButtonText: '',
   emailPopupEnabled: false,
@@ -531,6 +532,15 @@ export function AdminPanelClient() {
                   value={settings.saleBannerTitle}
                   onChange={(event) =>
                     patchSettings('saleBannerTitle', event.target.value)
+                  }
+                />
+              </label>
+              <label>
+                Sale banner discount text
+                <input
+                  value={settings.saleBannerDiscountText}
+                  onChange={(event) =>
+                    patchSettings('saleBannerDiscountText', event.target.value)
                   }
                 />
               </label>

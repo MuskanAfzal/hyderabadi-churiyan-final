@@ -16,11 +16,15 @@ export default async function TrackOrderPage({
   const params = await searchParams;
   const orderId = getValue(params.orderId) || '';
   const result = orderId ? await findOrderById(orderId) : null;
+  const iconBase = '/uploads/hyderabadi-churiyan-icons';
 
   return (
-    <section className="section">
+    <section className="section trackPage">
       <div className="container contact">
         <div className="contactCard">
+          <div className="storefrontPageIcon" aria-hidden="true">
+            <img src={`${iconBase}/delivery-orange.png`} alt="" />
+          </div>
           <h1>Track Order</h1>
           <p className="muted">
             Enter your order ID to check the latest status.

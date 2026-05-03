@@ -19,6 +19,7 @@ const blankSettings: StoreSettings = {
   announcementBarText: '',
   saleBannerEnabled: false,
   saleBannerTitle: '',
+  saleBannerDiscountText: '',
   saleBannerText: '',
   saleBannerButtonText: '',
   emailPopupEnabled: false,
@@ -271,6 +272,56 @@ export function AdminSettingsClient() {
                 value={settings.announcementBarText}
                 onChange={(event) =>
                   patch('announcementBarText', event.target.value)
+                }
+              />
+            </label>
+            <label className="adminCheckField">
+              <input
+                type="checkbox"
+                checked={settings.saleBannerEnabled}
+                onChange={(event) =>
+                  patch('saleBannerEnabled', event.target.checked)
+                }
+              />
+              Homepage promo banner enabled
+            </label>
+            <label>
+              Promo left text
+              <input
+                className="adminInput"
+                value={settings.saleBannerTitle}
+                onChange={(event) =>
+                  patch('saleBannerTitle', event.target.value)
+                }
+              />
+            </label>
+            <label>
+              Promo discount text
+              <input
+                className="adminInput"
+                value={settings.saleBannerDiscountText}
+                onChange={(event) =>
+                  patch('saleBannerDiscountText', event.target.value)
+                }
+              />
+            </label>
+            <label>
+              Promo right text
+              <input
+                className="adminInput"
+                value={settings.saleBannerText}
+                onChange={(event) =>
+                  patch('saleBannerText', event.target.value)
+                }
+              />
+            </label>
+            <label>
+              Promo code text
+              <input
+                className="adminInput"
+                value={settings.saleBannerButtonText}
+                onChange={(event) =>
+                  patch('saleBannerButtonText', event.target.value)
                 }
               />
             </label>

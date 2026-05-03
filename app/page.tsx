@@ -11,6 +11,8 @@ function formatPrice(currency: string, price: number) {
 
 export default async function HomePage() {
   const [home, store] = await Promise.all([getHomeData(), getStoreContext()]);
+  const assetBase = '/uploads/hyderabadi-churiyan-elements';
+  const iconBase = '/uploads/hyderabadi-churiyan-icons';
 
   const gallery = (
     home.settings.galleryImages?.length
@@ -20,10 +22,6 @@ export default async function HomePage() {
     .filter(Boolean)
     .slice(0, 6);
 
-  const heroProduct = home.featured[5] || home.featured[0];
-  const storyProduct = home.featured[3] || home.featured[1] || heroProduct;
-  const heroImage = home.settings.heroImage || heroProduct?.image || gallery[0];
-  const storyImage = storyProduct?.image || gallery[3] || heroImage;
   const bestSellers = [...home.bestSellers, ...home.featured]
     .filter(
       (product, index, all) =>
@@ -31,69 +29,87 @@ export default async function HomePage() {
     )
     .slice(0, 5);
 
-  const collectionBlueprints = [
+  const heroProduct = home.featured[5] || home.featured[0];
+  const storyProduct = home.featured[3] || home.featured[1] || home.featured[0];
+  const heroImage = home.settings.heroImage || heroProduct?.image || gallery[0];
+  const storyImage = storyProduct?.image || gallery[3] || gallery[0];
+
+  const collectionCards = [
     {
       category: 'Bridal Bangles',
       title: 'Bridal',
-      label: 'Collection',
-      tone: 'pink',
+      image: `${assetBase}/bridal_jewelry_collection_in_neon_glow.png`,
     },
     {
       category: 'Chooriyan Sets',
       title: 'Festive',
-      label: 'Vibes',
-      tone: 'cyan',
+      image: `${assetBase}/elegant_jewel_toned_bangle_collection_display.png`,
     },
     {
       category: 'Custom Bangles',
       title: 'Everyday',
-      label: 'Elegance',
-      tone: 'orange',
+      image: `${assetBase}/luxurious_bangle_display_with_golden_accents.png`,
     },
     {
       category: 'Head Accessories',
       title: 'Statement',
-      label: 'Pieces',
-      tone: 'lime',
+      image: `${assetBase}/ornate_bangle_ad_with_glowing_accents.png`,
     },
   ];
 
-  const collectionCards = collectionBlueprints.flatMap((blueprint, index) => {
-    const collection =
-      home.collections.find((item) => item.name === blueprint.category) ||
-      home.collections[index];
-
-    return collection ? [{ ...blueprint, collection }] : [];
-  });
-
   const promises = [
-    { title: 'Handcrafted', text: 'Made with love', tone: 'yellow' },
-    { title: 'Locally Inspired', text: 'Rooted in Hyderabad', tone: 'pink' },
-    { title: 'Premium Quality', text: 'Made to last', tone: 'cyan' },
-    { title: 'Nationwide Delivery', text: 'Across Pakistan', tone: 'orange' },
+    {
+      title: 'Handcrafted',
+      text: 'Made with love',
+      tone: 'yellow',
+      icon: 'hand-love-yellow.png',
+    },
+    {
+      title: 'Locally Inspired',
+      text: 'Rooted in Hyderabad',
+      tone: 'pink',
+      icon: 'charminar-pink.png',
+    },
+    {
+      title: 'Premium Quality',
+      text: 'Made to last',
+      tone: 'cyan',
+      icon: 'diamond-cyan.png',
+    },
+    {
+      title: 'Nationwide Delivery',
+      text: 'Across Pakistan',
+      tone: 'orange',
+      icon: 'delivery-orange.png',
+    },
   ];
 
   const whyChoose = [
-    'Unique designs for every you',
-    'Premium materials with finest quality',
-    'Secure packaging, safe and elegant',
-    'Easy returns with hassle-free support',
-    'Happy customers, our biggest pride',
+    { text: 'Unique designs for every you', icon: 'bangle-pink.png' },
+    { text: 'Premium materials with finest quality', icon: 'diamond-cyan.png' },
+    { text: 'Secure packaging, safe and elegant', icon: 'gift-yellow.png' },
+    { text: 'Easy returns with hassle-free support', icon: 'returns-pink.png' },
+    { text: 'Happy customers, our biggest pride', icon: 'people-yellow.png' },
   ];
+  const trustItems = [
+    { title: 'Premium Materials', icon: 'diamond-cyan.png' },
+    { title: 'Secure Packaging', icon: 'gift-yellow.png' },
+    { title: 'Easy Returns', icon: 'returns-pink.png' },
+    { title: 'Happy Customers', icon: 'people-yellow.png' },
+  ];
+  const promoBannerEnabled = home.settings.saleBannerEnabled !== false;
+  const promoBannerTitle =
+    home.settings.saleBannerTitle || 'First Order Special';
+  const promoBannerDiscount = home.settings.saleBannerDiscountText || '20% Off';
+  const promoBannerText = home.settings.saleBannerText || 'On Your First Order';
+  const promoBannerCode =
+    home.settings.saleBannerButtonText || 'Use Code: HYD20';
 
   return (
     <div className="neonHome">
       <section className="neonHero">
         <div className="container neonHero__grid">
           <div className="neonHero__copy">
-            {store.storeLogo ? (
-              <img
-                className="neonHero__logo"
-                src={store.storeLogo}
-                alt={store.storeName}
-              />
-            ) : null}
-
             <p className="neonHero__kicker">Hyderabadi Churiyan</p>
             <h1>
               <span className="neonScript neonScript--yellow">Har Rang.</span>
@@ -137,7 +153,9 @@ export default async function HomePage() {
             className={`neonPromise neonPromise--${promise.tone}`}
             key={promise.title}
           >
-            <span className="neonPromise__icon" />
+            <span className="neonPromise__icon" aria-hidden="true">
+              <img src={`${iconBase}/${promise.icon}`} alt="" />
+            </span>
             <div>
               <h2>{promise.title}</h2>
               <p>{promise.text}</p>
@@ -156,31 +174,17 @@ export default async function HomePage() {
         <div className="neonCollectionGrid">
           {collectionCards.map((card) => (
             <Link
-              className={`neonCollectionCard neonCollectionCard--${card.tone}`}
-              href={`/shop?category=${encodeURIComponent(card.collection.name)}`}
+              className="neonCollectionCard neonCollectionCard--asset"
+              href={`/shop?category=${encodeURIComponent(card.category)}`}
               key={card.category}
             >
-              <div className="neonCollectionCard__arch">
-                {card.collection.image ? (
-                  <img
-                    src={card.collection.image}
-                    alt={card.collection.name}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ) : null}
-              </div>
-              <div className="neonCollectionCard__copy">
-                <h3>{card.title}</h3>
-                <p>{card.label}</p>
-                <span>Explore</span>
-              </div>
+              <img src={card.image} alt={`${card.title} collection`} />
             </Link>
           ))}
         </div>
       </section>
 
-      <section className="container neonSection">
+      <section className="container neonSection" id="best-sellers">
         <div className="neonSectionHead">
           <span />
           <h2>Best Sellers</h2>
@@ -205,7 +209,16 @@ export default async function HomePage() {
                   />
                 </Link>
                 <span className="neonProductCard__tag">
+                  <img
+                    src={`${iconBase}/${
+                      index % 2 === 0 ? 'fire-yellow.png' : 'spark-gold.png'
+                    }`}
+                    alt=""
+                  />
                   {index % 2 === 0 ? 'Trending' : 'New'}
+                </span>
+                <span className="neonProductWishlistIcon" aria-hidden="true">
+                  <img src={`${iconBase}/heart-pink.png`} alt="" />
                 </span>
                 <Link href={`/product/${product.id}`}>
                   <h3>{product.title}</h3>
@@ -223,7 +236,14 @@ export default async function HomePage() {
                     image: product.image,
                   }}
                 >
-                  {inStock ? 'Add To Cart' : 'Out Of Stock'}
+                  {inStock ? (
+                    <>
+                      <img src={`${iconBase}/cart-pink.png`} alt="" />
+                      Add To Cart
+                    </>
+                  ) : (
+                    'Out Of Stock'
+                  )}
                 </AddToCartButton>
               </article>
             );
@@ -231,7 +251,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="container neonStory">
+      <section className="container neonStory" id="story">
         <div className="neonStory__image">
           {storyImage ? (
             <img
@@ -258,23 +278,26 @@ export default async function HomePage() {
             Know Our Story
           </Link>
         </div>
+        <div className="neonStory__art" aria-hidden="true">
+          <img src={store.storeLogo} alt="" loading="lazy" decoding="async" />
+        </div>
       </section>
 
       <section className="container neonTrustStrip" aria-label="More benefits">
-        {[
-          'Premium Materials',
-          'Secure Packaging',
-          'Easy Returns',
-          'Happy Customers',
-        ].map((item) => (
-          <div key={item}>
-            <span />
-            <strong>{item}</strong>
+        {trustItems.map((item) => (
+          <div key={item.title}>
+            <span>
+              <img src={`${iconBase}/${item.icon}`} alt="" />
+            </span>
+            <strong>{item.title}</strong>
           </div>
         ))}
       </section>
 
-      <section className="container neonSection neonInstaSection">
+      <section
+        className="container neonSection neonInstaSection"
+        id="insta-love"
+      >
         <div className="neonSectionHead">
           <span />
           <h2>Insta Love</h2>
@@ -306,12 +329,24 @@ export default async function HomePage() {
         </Link>
       </section>
 
-      <section className="container neonOfferBanner">
-        <span>First Order Special</span>
-        <strong>20% Off</strong>
-        <span>On Your First Order</span>
-        <mark>Use Code: HYD20</mark>
-      </section>
+      {promoBannerEnabled ? (
+        <section className="container neonOfferBanner">
+          <img
+            className="neonOfferBanner__icon neonOfferBanner__icon--left"
+            src={`${iconBase}/bangle-pink.png`}
+            alt=""
+          />
+          <span>{promoBannerTitle}</span>
+          <strong>{promoBannerDiscount}</strong>
+          <span>{promoBannerText}</span>
+          <mark>{promoBannerCode}</mark>
+          <img
+            className="neonOfferBanner__icon neonOfferBanner__icon--right"
+            src={`${iconBase}/fire-yellow.png`}
+            alt=""
+          />
+        </section>
+      ) : null}
 
       <section className="container neonWhy">
         <div className="neonSectionHead">
@@ -321,9 +356,11 @@ export default async function HomePage() {
         </div>
         <div className="neonWhy__grid">
           {whyChoose.map((item) => (
-            <article key={item}>
-              <span />
-              <p>{item}</p>
+            <article key={item.text}>
+              <span>
+                <img src={`${iconBase}/${item.icon}`} alt="" />
+              </span>
+              <p>{item.text}</p>
             </article>
           ))}
         </div>

@@ -34,6 +34,7 @@ export function ProductCard({
   index = 0,
 }: ProductCardProps) {
   const stock = getStockState(product);
+  const iconBase = '/uploads/hyderabadi-churiyan-icons';
   const badge =
     showBadges && index === 0
       ? { label: 'Best Seller', className: 'cardBadge cardBadge--bestseller' }
@@ -98,7 +99,14 @@ export function ProductCard({
               image: product.image,
             }}
             disabled={stock.label === 'Out of stock'}
-          />
+          >
+            <img
+              className="cardActionIcon"
+              src={`${iconBase}/cart-pink.png`}
+              alt=""
+            />
+            Add to Cart
+          </AddToCartButton>
           <Link
             className="btn btn--small btn--ghost"
             href={`/product/${product.id}`}

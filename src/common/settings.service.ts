@@ -16,6 +16,7 @@ export type StoreSettings = {
   announcementBarText: string;
   saleBannerEnabled: boolean;
   saleBannerTitle: string;
+  saleBannerDiscountText: string;
   saleBannerText: string;
   saleBannerButtonText: string;
   emailPopupEnabled: boolean;
@@ -109,9 +110,10 @@ const defaults: StoreSettings = {
   announcementBarEnabled: true,
   announcementBarText: 'Free delivery on orders above PKR 5000',
   saleBannerEnabled: true,
-  saleBannerTitle: '30% OFF SALE',
-  saleBannerText: 'Limited-time offers on selected favourites.',
-  saleBannerButtonText: 'Shop the Sale',
+  saleBannerTitle: 'First Order Special',
+  saleBannerDiscountText: '20% Off',
+  saleBannerText: 'On Your First Order',
+  saleBannerButtonText: 'Use Code: HYD20',
   emailPopupEnabled: true,
   emailPopupTitle: 'Subscribe for 10% discount',
   emailPopupText: 'Be the first to hear about new drops and limited offers.',
