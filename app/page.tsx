@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { AddToCartButton } from '@/components/add-to-cart-button';
+import { HomeScrollAnimations } from '@/components/home-scroll-animations';
 import { isProductInStock } from '@/lib/product-stock';
 import { getHomeData, getStoreContext } from '@/lib/storefront';
 
@@ -107,6 +108,7 @@ export default async function HomePage() {
 
   return (
     <div className="neonHome">
+      <HomeScrollAnimations />
       <section className="neonHero">
         <div className="container neonHero__grid">
           <div className="neonHero__copy">

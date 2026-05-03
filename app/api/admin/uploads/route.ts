@@ -1,14 +1,18 @@
 import { randomUUID } from 'crypto';
 import { NextResponse } from 'next/server';
 import sharp from 'sharp';
+import { createClient } from '@supabase/supabase-js';
 
 export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
 
 const maxFileSize = 10 * 1024 * 1024;
 const blockedMimeTypes = new Set(['image/svg+xml']);
 
 function supabaseStorageConfig() {
-  const url = String(process.env.SUPABASE_URL || '').replace(/\/+$/, '');
+  const url = String(
+    process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+  ).replace(/\/+$/, '');
 
   const key = String(process.env.SUPABASE_SERVICE_ROLE_KEY || '').trim();
 
@@ -19,6 +23,59 @@ function supabaseStorageConfig() {
   if (!url || !key || !bucket) return null;
 
   return { bucket, key, url };
+}
+
+async function ensurePublicBucket(config: {
+  bucket: string;
+  key: string;
+  url: string;
+}) {
+  const supabase = createClient(config.url, config.key, {
+    auth: {
+      persistSession: false,
+    },
+  });
+
+  const { data: bucket, error: getBucketError } =
+    await supabase.storage.getBucket(config.bucket);
+
+  if (getBucketError) {
+    const { error: createBucketError } = await supabase.storage.createBucket(
+      config.bucket,
+      {
+        allowedMimeTypes: ['image/webp'],
+        fileSizeLimit: maxFileSize,
+        public: true,
+      },
+    );
+
+    if (createBucketError) {
+      throw new Error(
+        `Supabase Storage bucket "${config.bucket}" was not found and could not be created: ${createBucketError.message}`,
+      );
+    }
+
+    return supabase;
+  }
+
+  if (!bucket.public) {
+    const { error: updateBucketError } = await supabase.storage.updateBucket(
+      config.bucket,
+      {
+        allowedMimeTypes: ['image/webp'],
+        fileSizeLimit: maxFileSize,
+        public: true,
+      },
+    );
+
+    if (updateBucketError) {
+      throw new Error(
+        `Supabase Storage bucket "${config.bucket}" must be public for storefront images: ${updateBucketError.message}`,
+      );
+    }
+  }
+
+  return supabase;
 }
 
 function safeName(name: string) {
@@ -36,24 +93,18 @@ export async function POST(request: Request) {
   try {
     const supabaseStorage = supabaseStorageConfig();
 
-    console.log('UPLOAD ENV CHECK', {
-      hasUrl: !!process.env.NEXT_PUBLIC_SUPABASE_URL,
-      url: process.env.NEXT_PUBLIC_SUPABASE_URL,
-      hasServiceKey: !!process.env.SUPABASE_SERVICE_ROLE_KEY,
-      hasBucket: !!process.env.SUPABASE_STORAGE_BUCKET,
-      bucket: process.env.SUPABASE_STORAGE_BUCKET,
-    });
-
     if (!supabaseStorage) {
       return NextResponse.json(
         {
           ok: false,
           error:
-            'Supabase Storage is not configured. Add NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, and SUPABASE_STORAGE_BUCKET in Vercel.',
+            'Supabase Storage is not configured. Add SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, and SUPABASE_STORAGE_BUCKET.',
         },
         { status: 500 },
       );
     }
+
+    const supabase = await ensurePublicBucket(supabaseStorage);
 
     const form = await request.formData();
     const files = form
@@ -86,29 +137,23 @@ export async function POST(request: Request) {
         .webp({ quality: 86 })
         .toBuffer();
 
-      const uploadUrl = `${supabaseStorage.url}/storage/v1/object/${supabaseStorage.bucket}/${objectPath}`;
+      const { error: uploadError } = await supabase.storage
+        .from(supabaseStorage.bucket)
+        .upload(objectPath, bytes, {
+          cacheControl: '31536000',
+          contentType: 'image/webp',
+          upsert: true,
+        });
 
-      const uploadResponse = await fetch(uploadUrl, {
-        method: 'POST',
-        headers: {
-          apikey: supabaseStorage.key,
-          Authorization: `Bearer ${supabaseStorage.key}`,
-          'Cache-Control': '31536000',
-          'Content-Type': 'image/webp',
-          'x-upsert': 'true',
-        },
-        body: new Uint8Array(bytes),
-      });
-
-      if (!uploadResponse.ok) {
-        const text = await uploadResponse.text();
-        console.error('SUPABASE UPLOAD RESPONSE:', text);
-        throw new Error(`Supabase upload failed: ${text}`);
+      if (uploadError) {
+        throw new Error(`Supabase upload failed: ${uploadError.message}`);
       }
 
-      images.push(
-        `${supabaseStorage.url}/storage/v1/object/public/${supabaseStorage.bucket}/${objectPath}`,
-      );
+      const { data } = supabase.storage
+        .from(supabaseStorage.bucket)
+        .getPublicUrl(objectPath);
+
+      images.push(data.publicUrl);
     }
 
     return NextResponse.json({ ok: true, images });
