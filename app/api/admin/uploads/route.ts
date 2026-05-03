@@ -8,9 +8,7 @@ const maxFileSize = 10 * 1024 * 1024;
 const blockedMimeTypes = new Set(['image/svg+xml']);
 
 function supabaseStorageConfig() {
-  const url = String(
-    process.env.SUPABASE_URL || '',
-  ).replace(/\/+$/, '');
+  const url = String(process.env.SUPABASE_URL || '').replace(/\/+$/, '');
 
   const key = String(process.env.SUPABASE_SERVICE_ROLE_KEY || '').trim();
 

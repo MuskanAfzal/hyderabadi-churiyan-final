@@ -1,11 +1,17 @@
 import Link from 'next/link';
+import { AddToCartButton } from '@/components/add-to-cart-button';
+import { isProductInStock } from '@/lib/product-stock';
 import { getHomeData, getStoreContext } from '@/lib/storefront';
 
 export const dynamic = 'force-dynamic';
 
+function formatPrice(currency: string, price: number) {
+  return `${currency} ${Number(price || 0).toLocaleString('en-PK')}`;
+}
+
 export default async function HomePage() {
   const [home, store] = await Promise.all([getHomeData(), getStoreContext()]);
-  const copy = home.settings.siteCopy;
+
   const gallery = (
     home.settings.galleryImages?.length
       ? home.settings.galleryImages
@@ -13,196 +19,182 @@ export default async function HomePage() {
   )
     .filter(Boolean)
     .slice(0, 6);
-  const categoryOrder = [
-    'Bridal Bangles',
-    'Custom Bangles',
-    'Chooriyan Sets',
-    'Necklaces',
-    'Earrings',
-    'Head Accessories',
+
+  const heroProduct = home.featured[5] || home.featured[0];
+  const storyProduct = home.featured[3] || home.featured[1] || heroProduct;
+  const heroImage = home.settings.heroImage || heroProduct?.image || gallery[0];
+  const storyImage = storyProduct?.image || gallery[3] || heroImage;
+  const bestSellers = [...home.bestSellers, ...home.featured]
+    .filter(
+      (product, index, all) =>
+        product && all.findIndex((item) => item.id === product.id) === index,
+    )
+    .slice(0, 5);
+
+  const collectionBlueprints = [
+    {
+      category: 'Bridal Bangles',
+      title: 'Bridal',
+      label: 'Collection',
+      tone: 'pink',
+    },
+    {
+      category: 'Chooriyan Sets',
+      title: 'Festive',
+      label: 'Vibes',
+      tone: 'cyan',
+    },
+    {
+      category: 'Custom Bangles',
+      title: 'Everyday',
+      label: 'Elegance',
+      tone: 'orange',
+    },
+    {
+      category: 'Head Accessories',
+      title: 'Statement',
+      label: 'Pieces',
+      tone: 'lime',
+    },
   ];
-  const orderedCollections = categoryOrder
-    .map((name) =>
-      home.collections.find((collection) => collection.name === name),
-    )
-    .filter((collection): collection is (typeof home.collections)[number] =>
-      Boolean(collection),
-    )
-    .concat(
-      home.collections.filter(
-        (collection) => !categoryOrder.includes(collection.name),
-      ),
-    )
-    .slice(0, 6);
-  const featuredProducts = home.featured.slice(0, 8);
-  const editorialPrimary = home.featured[3] || home.featured[0];
-  const editorialSecondary = home.featured[10] || home.featured[1];
-  const showcaseProducts = featuredProducts.slice(2, 8);
-  const accessoryProducts = home.featured
-    .filter((product) =>
-      ['Necklaces', 'Earrings', 'Head Accessories'].includes(product.category),
-    )
-    .slice(0, 3);
+
+  const collectionCards = collectionBlueprints.flatMap((blueprint, index) => {
+    const collection =
+      home.collections.find((item) => item.name === blueprint.category) ||
+      home.collections[index];
+
+    return collection ? [{ ...blueprint, collection }] : [];
+  });
+
+  const promises = [
+    { title: 'Handcrafted', text: 'Made with love', tone: 'yellow' },
+    { title: 'Locally Inspired', text: 'Rooted in Hyderabad', tone: 'pink' },
+    { title: 'Premium Quality', text: 'Made to last', tone: 'cyan' },
+    { title: 'Nationwide Delivery', text: 'Across Pakistan', tone: 'orange' },
+  ];
+
+  const whyChoose = [
+    'Unique designs for every you',
+    'Premium materials with finest quality',
+    'Secure packaging, safe and elegant',
+    'Easy returns with hassle-free support',
+    'Happy customers, our biggest pride',
+  ];
 
   return (
-    <>
-      <section className="hero hero--full tiffanyHero">
-        <div className="heroBanner">
-          <video className="heroVideo" autoPlay muted loop playsInline>
-            <source
-              src="/uploads/hyderabadi-churiyan/new-reels.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <div className="heroBanner__overlay" />
-          <div className="tiffanyHero__mark">
-            <span>{store.storeName}</span>
-          </div>
-        </div>
-      </section>
+    <div className="neonHome">
+      <section className="neonHero">
+        <div className="container neonHero__grid">
+          <div className="neonHero__copy">
+            {store.storeLogo ? (
+              <img
+                className="neonHero__logo"
+                src={store.storeLogo}
+                alt={store.storeName}
+              />
+            ) : null}
 
-      <section className="tiffanyIntro">
-        <div className="container tiffanyIntro__inner">
-          <h1>
-            {home.settings.heroTitle || 'Custom Churiyan for Every Celebration'}
-          </h1>
-          <p>
-            {home.settings.heroSubtitle ||
-              'Bridal bangles, custom churiyan, kaleeras and accessories made around your outfit.'}
-          </p>
-          <Link className="btn btn--primary" href="/shop">
-            Shop Now
-          </Link>
-        </div>
-      </section>
+            <p className="neonHero__kicker">Hyderabadi Churiyan</p>
+            <h1>
+              <span className="neonScript neonScript--yellow">Har Rang.</span>
+              <span className="neonScript neonScript--cyan">Har Andaaz.</span>
+              <span className="neonScript neonScript--pink">
+                Bilkul Tumhare Liye.
+              </span>
+            </h1>
+            <p className="neonHero__lead">
+              Handcrafted bangles inspired by tradition, designed for every
+              moment.
+            </p>
 
-      {store.saleBanner?.active ? (
-        <section className="section saleBannerSection">
-          <div className="container">
-            <div className="saleBanner">
-              <div>
-                <span className="badgePill">Special Offer</span>
-                <h2>{store.saleBanner.title || '30% OFF SALE'}</h2>
-                <p className="muted">
-                  {store.saleBanner.text ||
-                    'Limited-time offers on selected favourites.'}
-                </p>
-              </div>
-              <Link className="btn btn--primary" href="/shop">
-                {store.saleBanner.buttonText || 'Shop the Sale'}
+            <div className="neonHero__actions">
+              <Link className="neonPaintButton" href="/shop">
+                Shop Now
+              </Link>
+              <Link className="neonOutlineButton" href="#collections">
+                Explore Collections
               </Link>
             </div>
           </div>
-        </section>
-      ) : null}
 
-      <section className="tiffanySection tiffanyCategories">
-        <div className="container">
-          <h2 className="tiffanyTitle">{copy.homeCategoryTitle}</h2>
-
-          <div className="tiffanyCategoryGrid">
-            {orderedCollections.map((collection) => (
-              <Link
-                key={collection.name}
-                className="tiffanyCategoryCard"
-                href={`/shop?category=${encodeURIComponent(collection.name)}`}
-              >
-                <div className="tiffanyCategoryCard__media">
-                  {collection.image ? (
-                    <img
-                      src={collection.image}
-                      alt={collection.name}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ) : (
-                    <div className="collectionPlaceholder" />
-                  )}
-                </div>
-                <h3>{collection.name}</h3>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="tiffanySection tiffanyFeaturePair">
-        <div className="container tiffanyFeaturePair__grid">
-          {editorialPrimary ? (
-            <article className="tiffanyFeature">
-              <Link href={`/product/${editorialPrimary.id}`}>
-                <img
-                  src={editorialPrimary.image}
-                  alt={editorialPrimary.title}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </Link>
-              <div className="tiffanyFeature__body">
-                <h2>{copy.homeFeaturePrimaryTitle}</h2>
-                <Link className="link" href="/shop?category=Custom%20Bangles">
-                  {copy.homeFeaturePrimaryCta}
-                </Link>
-              </div>
-            </article>
-          ) : null}
-
-          {editorialSecondary ? (
-            <article className="tiffanyFeature">
-              <Link href={`/product/${editorialSecondary.id}`}>
-                <img
-                  src={editorialSecondary.image}
-                  alt={editorialSecondary.title}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </Link>
-              <div className="tiffanyFeature__body">
-                <h2>{copy.homeFeatureSecondaryTitle}</h2>
-                <Link className="link" href="/shop?category=Earrings">
-                  {copy.homeFeatureSecondaryCta}
-                </Link>
-              </div>
-            </article>
-          ) : null}
-        </div>
-      </section>
-
-      <section className="homeShowcase">
-        <div className="container">
-          <div className="homeShowcase__head">
-            <span>{copy.homeShowcaseKicker}</span>
-            <h2>{copy.homeShowcaseTitle}</h2>
-            <Link className="link" href="/shop">
-              {copy.homeShowcaseLink}
-            </Link>
-          </div>
-
-          <div className="homeShowcase__grid">
-            {editorialPrimary ? (
-              <Link
-                className="homeShowcase__feature"
-                href={`/product/${editorialPrimary.id}`}
-              >
-                <img
-                  src={editorialPrimary.image}
-                  alt={editorialPrimary.title}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div>
-                  <span>Custom Bangles</span>
-                  <h3>{editorialPrimary.title}</h3>
-                  <p>{editorialPrimary.shortDesc}</p>
-                </div>
-              </Link>
+          <div className="neonHero__visual" aria-label="Featured bangles">
+            <span className="neonStroke neonStroke--pink" />
+            <span className="neonStroke neonStroke--cyan" />
+            <span className="neonStroke neonStroke--yellow" />
+            {heroImage ? (
+              <img src={heroImage} alt="Colorful handcrafted bangles" />
             ) : null}
+            <div className="neonHero__badge">
+              Custom bridal, festive and everyday sets
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="homeProductTiles">
-              {showcaseProducts.map((product) => (
+      <section className="container neonPromiseStrip" aria-label="Store values">
+        {promises.map((promise) => (
+          <article
+            className={`neonPromise neonPromise--${promise.tone}`}
+            key={promise.title}
+          >
+            <span className="neonPromise__icon" />
+            <div>
+              <h2>{promise.title}</h2>
+              <p>{promise.text}</p>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className="container neonSection" id="collections">
+        <div className="neonSectionHead">
+          <span />
+          <h2>Shop By Collection</h2>
+          <span />
+        </div>
+
+        <div className="neonCollectionGrid">
+          {collectionCards.map((card) => (
+            <Link
+              className={`neonCollectionCard neonCollectionCard--${card.tone}`}
+              href={`/shop?category=${encodeURIComponent(card.collection.name)}`}
+              key={card.category}
+            >
+              <div className="neonCollectionCard__arch">
+                {card.collection.image ? (
+                  <img
+                    src={card.collection.image}
+                    alt={card.collection.name}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : null}
+              </div>
+              <div className="neonCollectionCard__copy">
+                <h3>{card.title}</h3>
+                <p>{card.label}</p>
+                <span>Explore</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="container neonSection">
+        <div className="neonSectionHead">
+          <span />
+          <h2>Best Sellers</h2>
+          <span />
+        </div>
+
+        <div className="neonProductRail">
+          {bestSellers.map((product, index) => {
+            const inStock = isProductInStock(product);
+
+            return (
+              <article className="neonProductCard" key={product.id}>
                 <Link
-                  key={product.id}
-                  className="homeProductTile"
+                  className="neonProductCard__media"
                   href={`/product/${product.id}`}
                 >
                   <img
@@ -211,98 +203,131 @@ export default async function HomePage() {
                     loading="lazy"
                     decoding="async"
                   />
-                  <div>
-                    <h3>{product.title}</h3>
-                    <p>
-                      {store.currency} {product.price}
-                    </p>
-                  </div>
                 </Link>
-              ))}
-            </div>
-          </div>
+                <span className="neonProductCard__tag">
+                  {index % 2 === 0 ? 'Trending' : 'New'}
+                </span>
+                <Link href={`/product/${product.id}`}>
+                  <h3>{product.title}</h3>
+                </Link>
+                <p className="neonPrice">
+                  {formatPrice(store.currency, product.price)}
+                </p>
+                <AddToCartButton
+                  className="neonAddCart"
+                  disabled={!inStock}
+                  item={{
+                    id: product.id,
+                    title: product.title,
+                    price: product.price,
+                    image: product.image,
+                  }}
+                >
+                  {inStock ? 'Add To Cart' : 'Out Of Stock'}
+                </AddToCartButton>
+              </article>
+            );
+          })}
         </div>
       </section>
 
-      <section className="customStory">
-        <div className="customStory__media">
-          {editorialSecondary ? (
+      <section className="container neonStory">
+        <div className="neonStory__image">
+          {storyImage ? (
             <img
-              src={editorialSecondary.image}
-              alt={editorialSecondary.title}
+              src={storyImage}
+              alt="Hyderabadi Churiyan handcrafted story"
               loading="lazy"
               decoding="async"
             />
           ) : null}
         </div>
-        <div className="customStory__copy">
-          <span>{copy.customStoryKicker}</span>
-          <h2>{copy.customStoryTitle}</h2>
-          <p>{copy.customStoryText}</p>
-          <Link
-            className="btn btn--primary"
-            href="/shop?category=Custom%20Bangles"
-          >
-            {copy.customStoryButton}
+        <div className="neonStory__copy">
+          <p className="neonMiniTitle">Our Story</p>
+          <h2>
+            <span>From the lanes of</span>
+            <span>Hyderabad to your heart.</span>
+          </h2>
+          <p>
+            Every bangle holds a story of culture, craftsmanship, and the women
+            who inspire us every day. Hyderabadi Churiyan is more than jewelry;
+            it is a celebration of roots, color, and custom pieces made with
+            pride.
+          </p>
+          <Link className="neonOutlineButton" href="/contact">
+            Know Our Story
           </Link>
         </div>
       </section>
 
-      <section className="tiffanySection tiffanyExperience">
-        <div className="container">
-          <h2 className="tiffanyTitle">{copy.completeLookTitle}</h2>
-          <div className="tiffanyExperience__grid accessoriesEdit">
-            {(accessoryProducts.length
-              ? accessoryProducts
-              : featuredProducts.slice(0, 3)
-            ).map((product) => (
-              <Link
-                key={product.id}
-                className="accessoryCard"
-                href={`/product/${product.id}`}
-              >
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <h3>{product.title}</h3>
-                <p>{product.shortDesc}</p>
-                <span>Shop {product.category}</span>
-              </Link>
-            ))}
+      <section className="container neonTrustStrip" aria-label="More benefits">
+        {[
+          'Premium Materials',
+          'Secure Packaging',
+          'Easy Returns',
+          'Happy Customers',
+        ].map((item) => (
+          <div key={item}>
+            <span />
+            <strong>{item}</strong>
           </div>
-        </div>
+        ))}
       </section>
 
-      <section className="tiffanySection instaSection">
-        <div className="container">
-          <h2 className="tiffanyTitle">{copy.instagramTitle}</h2>
-          <div className="instaStrip">
-            {gallery.map((image, index) => (
-              <Link
-                key={`${image}-${index}`}
-                className="instaCard"
-                href="/shop"
-              >
-                <img
-                  src={image}
-                  alt={store.storeName}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span className="instaOverlay">
-                  @
-                  {String(store.instagramHandle)
-                    .replace(/\s+/g, '')
-                    .toLowerCase()}
-                </span>
-              </Link>
-            ))}
-          </div>
+      <section className="container neonSection neonInstaSection">
+        <div className="neonSectionHead">
+          <span />
+          <h2>Insta Love</h2>
+          <span />
+        </div>
+        <p className="neonCenterText">
+          Tag us to get featured #{store.storeName.replace(/\s+/g, '')}
+        </p>
+
+        <div className="neonInstaGrid">
+          {gallery.map((image, index) => (
+            <Link
+              className="neonInstaCard"
+              href="/shop"
+              key={`${image}-${index}`}
+            >
+              <img
+                src={image}
+                alt={`${store.storeName} gallery ${index + 1}`}
+                loading="lazy"
+                decoding="async"
+              />
+            </Link>
+          ))}
+        </div>
+
+        <Link className="neonFollowButton" href="/contact">
+          Follow Us @{store.instagramHandle}
+        </Link>
+      </section>
+
+      <section className="container neonOfferBanner">
+        <span>First Order Special</span>
+        <strong>20% Off</strong>
+        <span>On Your First Order</span>
+        <mark>Use Code: HYD20</mark>
+      </section>
+
+      <section className="container neonWhy">
+        <div className="neonSectionHead">
+          <span />
+          <h2>Why Choose Us</h2>
+          <span />
+        </div>
+        <div className="neonWhy__grid">
+          {whyChoose.map((item) => (
+            <article key={item}>
+              <span />
+              <p>{item}</p>
+            </article>
+          ))}
         </div>
       </section>
-    </>
+    </div>
   );
 }

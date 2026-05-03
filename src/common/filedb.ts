@@ -9,9 +9,7 @@ export class FileDB<T> {
     this.fallback = fallback;
 
     const baseDir =
-      process.env.NODE_ENV === 'production'
-        ? '/tmp'
-        : process.cwd();
+      process.env.NODE_ENV === 'production' ? '/tmp' : process.cwd();
 
     this.filePath = path.join(baseDir, file);
   }
